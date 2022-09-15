@@ -30,19 +30,19 @@ export const CustomNavbar = () => {
           </Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/" className="text-white">Home</Nav.Link>
             </Nav>
             <Nav className="ms-auto">
                 {!user && (
                     <>
-                    <Nav.Link href="/login">Log In</Nav.Link>
+                    <Nav.Link href="/login" className="text-white">Log In</Nav.Link>
                     </>
                 )}
                 {user && (
                     <>
-                    <p>{user?.displayName}</p>
-                    <img src={user?.photoURL || ""} width="40" height="40"  className="d-inline-block align-top mx-1"/>
-                    <button onClick={logOut}> Log Out</button>
+                    <Navbar.Text className="text-white">{user?.displayName}</Navbar.Text>
+                    <img src={user?.photoURL || ""} width="40" height="40"  className="d-inline-block align-top mx-2"/>
+                    <Nav.Link onClick={logOut} className="text-white ps-4"> Log Out</Nav.Link>
                     </>
                 )}
             </Nav>
