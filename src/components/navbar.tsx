@@ -1,29 +1,54 @@
-import { Link } from 'react-router-dom';
-import { auth } from '../config/firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { signOut } from 'firebase/auth'
+import { auth } from "../config/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 
-export const Navbar = () => {
-    const [user] = useAuthState(auth);
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import { Navbar } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-    const logOut = async () => {
-        await signOut(auth);
-    } 
+export const CustomNavbar = () => {
+  const [user] = useAuthState(auth);
 
-    return (
-        <div>
-            <Link to="/"> Home </Link>
-            <Link to="/login"> Login </Link>
+  const logOut = async () => {
+    await signOut(auth);
+  };
 
-            <div>
+  return (
+    <div>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="/login">
+            <img
+              alt=""
+              src="https://www.passaro.org/wp-content/uploads/2018/11/Ema.jpg"
+              width="50"
+              height="40"
+              className="d-inline-block align-top"
+            />{" "}
+            The Social App!
+          </Navbar.Brand>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+            </Nav>
+            <Nav className="ms-auto">
+                {!user && (
+                    <>
+                    <Nav.Link href="/login">Log In</Nav.Link>
+                    </>
+                )}
                 {user && (
                     <>
-                        <p>{user?.displayName}</p>
-                        <img src={user?.photoURL || ""} width="100" height="100"/>
-                        <button onClick={logOut}> Log Out</button>  
-                    </> 
+                    <p>{user?.displayName}</p>
+                    <img src={user?.photoURL || ""} width="40" height="40"  className="d-inline-block align-top mx-1"/>
+                    <button onClick={logOut}> Log Out</button>
+                    </>
                 )}
-            </div>
-        </div>
-    );
-}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
+  );
+};
