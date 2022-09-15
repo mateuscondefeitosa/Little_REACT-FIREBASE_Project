@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+
+.row {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 12px 12px 22px;
+}
+
+.login img {
+  height: 50vh;
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.btnLogin {
+  height: 50px;
+  width: 50%;
+  border: none;
+  outline: none;
+  border-radius: 60px;
+  font-weight: 600;
+  font-size: 18px;
+  background: #c83204;
+  color: white;
+}
+.btnLogin:hover {
+  background: #c21b05;
+  font-size: 22px;
+  transition: 0.8s;
+}
