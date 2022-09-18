@@ -31,6 +31,7 @@ export const CustomNavbar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/" className="text-white">Home</Nav.Link>
+              {user ? (<Nav.Link href="/createpost" className="text-white">Create Post</Nav.Link>) : ""}
             </Nav>
             <Nav className="ms-auto">
                 {!user && (
