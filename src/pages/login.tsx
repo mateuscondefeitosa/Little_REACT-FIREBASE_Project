@@ -24,7 +24,7 @@ export const Login = () => {
                         <img
                         alt=""
                         className="img-fluid" 
-                        src="https://images.unsplash.com/photo-1640537702474-3e503c21eefc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                        src="https://images.unsplash.com/photo-1593238350099-405c38243571?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
                         />
                     </Col>
                     <Col lg="7" className="text-center py-3">
