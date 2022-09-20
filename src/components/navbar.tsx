@@ -42,7 +42,7 @@ export const CustomNavbar = () => {
                 {user && (
                     <>
                     <Navbar.Text className="text-white">{user?.displayName}</Navbar.Text>
-                    <img src={user?.photoURL || ""} width="40" height="40"  className="d-inline-block align-top mx-2"/>
+                    <img src={user?.photoURL || ""} width="40" height="40" alt="" className="d-inline-block align-top mx-2"/>
                     <Nav.Link onClick={logOut} className="text-white ps-4"> Log Out</Nav.Link>
                     </>
                 )}
